@@ -6,44 +6,52 @@
 	font-size: 2em;
 	color: white;
 	background-color: #333333;
-	transform: translate(0, 50%);
-	/* display: flex;
-	flex-direction: column; */
+	transform: translate(0, 20%);
 }
 .slider__container {
 	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
-	padding: 30px 0;
+	padding: 30px 40px;
 	display: flex;
 	flex-direction: column;
 	row-gap: 1rem;
 }
 
+.item__container {
+	max-width: 1000px;
+	margin: 0 auto;
+	display: flex;
+}
+
 .slider__item {
-	/* max-width: 1000px; */
+	max-width: 1000px;
 	display: none;
 	position: relative;
-	margin: 0 auto;
 	top: 0;
+	margin: 0 auto;
+	width: 0%;
 	right: -100%;
+	animation: 1s ease-in-out;
 }
 
 .active,
 .next {
+	top: 0;
 	display: block;
 	right: 0;
+	width: 100%;
 }
 
-.next {
-	position: absolute;
-}
+/* .hide {
+	right: 100%;
+} */
 
 img {
 	border-radius: 20px;
 	width: 100%;
 	height: auto;
-	min-width: 1000px;
+	max-width: 1000px;
 }
 
 .controls__container {
@@ -63,11 +71,17 @@ img {
 }
 
 .controls__item {
-	width: 24px;
-	height: 24px;
+	width: 16px;
+	height: 16px;
 	background-color: #fff;
 	border-radius: 50%;
+	/* border: 8px solid black; */
+	/* box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1); */
 }
+.controls__item:hover {
+	background-color: violet;
+}
+
 .controls-active {
 	background-color: violet;
 }
@@ -78,11 +92,65 @@ img {
 	text-align: left;
 	display: block;
 	max-width: 200px;
+	/* display: flex; */
 }
 
 .item__description {
+	position: relative;
 	display: none;
+	right: -100%;
+	width: 0;
 }
 .description-active {
 	display: block;
+	width: 100%;
+	right: 0;
+}
+
+.to-left {
+	/* left: -100%; */
+	animation-name: left;
+}
+
+.from-right {
+	/* right: 100%; */
+	animation-name: right;
+}
+
+@media (max-width: 769px) {
+	.slider__container {
+		max-width: 700px;
+		padding: 30px 40px;
+		font-size: 18px;
+	}
+	.controls__container {
+		flex-direction: column-reverse;
+		row-gap: 1em;
+	}
+	.slider__controls {
+		align-self: center;
+		max-width: 130px;
+	}
+
+	.controls__item {
+		width: 12px;
+		height: 12px;
+	}
+}
+
+@keyframes left {
+	from {
+		left: 0;
+	}
+	to {
+		left: -100%;
+	}
+}
+@keyframes right {
+	from {
+		left: 100%;
+	}
+	to {
+		left: 0;
+	}
 }
