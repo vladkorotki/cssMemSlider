@@ -3,7 +3,7 @@
 	margin: 0 auto;
 	width: 100%;
 	max-width: 1280px;
-	font-size: 2em;
+	font-size: 20px;
 	color: white;
 	background-color: #333333;
 	transform: translate(0, 20%);
@@ -90,8 +90,8 @@ img {
 	position: relative;
 	overflow: hidden;
 	text-align: left;
-	display: block;
-	max-width: 200px;
+	/* display: inline-block; */
+	max-width: 320px;
 	/* display: flex; */
 }
 
@@ -119,11 +119,11 @@ img {
 }
 
 @media (max-width: 1080px) {
-	/* .slider__container {
+	.slider__container {
 		max-width: 700px;
 		padding: 30px 40px;
-		font-size: 18px;
-	} */
+		font-size: 0.8em;
+	}
 	.controls__container {
 		max-width: 768px;
 	}
@@ -145,12 +145,12 @@ img {
 	.slider__container {
 		max-width: 650px;
 		padding: 30px 40px;
-		font-size: 18px;
+		font-size: 0.8em;
 	}
-	.controls__container {
+	/* .controls__container {
 		flex-direction: column-reverse;
 		row-gap: 1em;
-	}
+	} */
 	.slider__controls {
 		align-self: center;
 		max-width: 130px;
@@ -169,7 +169,7 @@ img {
 	.slider__container {
 		max-width: 450px;
 		padding: 30px 40px;
-		font-size: 18px;
+		font-size: 0.7em;
 	}
 	.controls__container {
 		flex-direction: column-reverse;
@@ -192,7 +192,7 @@ img {
 	.slider__container {
 		max-width: 350px;
 		padding: 30px 40px;
-		font-size: 18px;
+		font-size: 0.5em;
 	}
 	.controls__container {
 		flex-direction: column-reverse;
@@ -214,9 +214,9 @@ img {
 
 @media (max-width: 450px) {
 	.slider__container {
-		max-width: 320px;
+		/* max-width: 320px; */
 		padding: 30px 40px;
-		font-size: 18px;
+		font-size: 0.5em;
 	}
 	.controls__container {
 		flex-direction: column-reverse;
@@ -233,6 +233,7 @@ img {
 	}
 	img {
 		max-width: 320px;
+		object-fit: contain;
 	}
 }
 
